@@ -7,22 +7,16 @@ Guía para la Construcción de APIs
 
  - [Objetivo del documento](#objetivo-del-documento)
  - [Formato de URLs](#formato-de-urls)
-    - Buenos Ejemplos
-    - Malos Ejemplos
- - Encabezados HTTP
- - Tipos de datos
- - Métodos HTTP
- - Respuestas
-    - Buenos ejemplos
-    - Malos ejemplos
- - Manejo de Errores
- - Versiones
-    - Buenos ejemplos
-    - Malos ejemplos
- - Límites de Registros
- - Codificación de caracteres
- - JSONP
- - Referencias
+ - [Encabezados HTTP](#encabezados-http)
+ - [Tipos de datos](#tipos-de-datos)
+ - [Métodos HTTP](#metodos-http)
+ - [Respuestas](#respuestas)
+ - [Manejo de Errores](#manejo-de-errores)
+ - [Versiones](#versiones)
+ - [Límites de Registros](#limites-de-registros)
+ - [Codificación de caracteres](#codificacion-de-caracteres)
+ - [JSONP](#jsonp)
+ - [Referencias](#referencias)
 
 ## Objetivo del documento ##
 
@@ -30,8 +24,9 @@ Pendiente
 
 ## Formato de URLs ##
 
-El número de versión de la API debe ir incluida en la base de la URL
-Ej: https://ejemplo.cl/api/v2/solicitudes
+El número de versión de la API debe ir incluida en la base de la URL, asi como también la extensión del formato en el cual serán devueltos los datos.
+
+ - Ej: https://ejemplo.cl/api/v2/solicitudes.json
 
 Una URL debe identificar un recurso o una colección de recursos.
 
@@ -39,25 +34,27 @@ La URL debe contener sustantivos, no verbos.
 
 Debe contener sustantivos en su forma plural.
 
-Se usan los métodos HTTP (GET, POST, PUT, DELETE) para operar sobre un recurso o una colección de recursos.
+Se usan los métodos HTTP (GET, POST, PUT, DELETE y PATCH) para operar sobre un recurso o una colección de recursos.
 
 La profundidad de una URL que describe un recurso no deberá ser más profunda que recurso/identificador/recurso.
 
 Atributos opcionales:
 Si cambian la lógica del resultado, deben ir en la url. Si son múltiples, deben ir separados por coma.
-Ej: https://ejemplo.cl/api/v2/solicitudes?tema=salud,educacion&sort=asc
+
+ - Ej: https://ejemplo.cl/api/v2/solicitudes.json?tema=salud,educacion&sort=asc
 
 Si no cambian la lógica del resultado, deben ir en el header HTTP.
-Ej: Autenticación OAuth
+
+ - Ej: Autenticación OAuth
 
 No utilizar acentos ni caracteres especiales en la URL.
 
 #### Buenos Ejemplos ####
 
  - Listado de solicitudes
-    - GET https://ejemplo.cl/api/v1/solicitudes
+    - GET https://ejemplo.cl/api/v1/solicitudes.json
  - Listado de solicitudes filtrado por tema y ordenado
-    - GET https://ejemplo.cl/api/v1/solicitudes?tema=salud,educacion&sort=asc
+    - GET https://ejemplo.cl/api/v1/solicitudes.json?tema=salud,educacion&sort=asc
 
 #### Malos Ejemplos ####
 
@@ -74,8 +71,7 @@ No utilizar acentos ni caracteres especiales en la URL.
 
 Dentro de los encabezados HTTP se deberá incluir el encabezado:
 
-
-Content-type: application/json
+ - Content-type: application/json
 
 
 ## Tipos de datos ##
@@ -87,14 +83,15 @@ JSON admite distintos tipos de datos estandar:
  - Number: Un numero que puede o no contener decimales.
     - Ej: 54, 55.3, 103.5
  - String: Una cadena de caracteres.
-    - Ej: “hola mundo”, “auto”, “mesa”
+    - Ej: "hola mundo", "auto", "mesa"
  - Boolean: Indica verdadero o falso
     - Ej: true, false
-      * Array: Un conjunto de elementos.
-Ej: [“hola mundo”, “mesa”, “auto”]
-      * Object: Se puede definir como un mapa de elementos.
-Ej: {“id:” 2, “nombre”: “Arturo”, “apellido”: “zamorano”}
-
+ - Array: Un conjunto de elementos.
+    - Ej: ["hola mundo", "mesa", "auto"]
+ - Object: Se puede definir como un mapa de elementos.
+    - Ej: {"id": 2, "nombre": "Arturo", "apellido": "zamorano"}
+ - Null: Valor nulo
+    - Ej: null
 
 Algunos tipos de datos no son parte del estandar JSON, pero esta seria su forma recomendada de representarlos:
 
@@ -121,8 +118,8 @@ Ejemplos:
 
 | Recurso | GET | POST | PUT | DELETE |
 | --- | --- | --- | --- | --- |
-| /mapaches | Obtiene el listado de mapaches | Crea un mapache nuevo | Actualización masiva de mapaches | Borra todos los mapaches |
-| /mapaches/123 | Obtiene el mapache identificado como 123 | Error | Si existe el mapache 123 lo actualiza, si no error | Borra el mapache identificado como 123 |
+| /mapaches.json | Obtiene el listado de mapaches | Crea un mapache nuevo | Actualización masiva de mapaches | Borra todos los mapaches |
+| /mapaches/123.json | Obtiene el mapache identificado como 123 | Error | Si existe el mapache 123 lo actualiza, si no error | Borra el mapache identificado como 123 |
 
 ## Respuestas ##
 
@@ -212,7 +209,7 @@ Para especificar límites utilizar parámetros opcionales limit y offset.
 
 Ej: Para obtener los registros del 51 al 78:
 
- - https://ejemplo.cl/v1/solicitudes?offset=50&limit=28
+ - https://ejemplo.cl/v1/solicitudes.json?offset=50&limit=28
 
 
 ## Codificación de caracteres ##
@@ -237,7 +234,7 @@ Para habilitar JSONP, nos podemos guiar con el siguiente ejemplo.
 
 Si el recurso original es:
 
- - http://ejemplo.cl/v1/solicitudes
+ - http://ejemplo.cl/v1/solicitudes.json
 
 Si la respuesta original es:
 
@@ -252,7 +249,7 @@ Si la respuesta original es:
 
 Para solicitar el resultado con JSONP deberemos incluir el parametro callback
 
- - http://ejemplo.cl/v1/solicitudes?callback=micallback
+ - http://ejemplo.cl/v1/solicitudes.json?callback=micallback
 
 La respuesta que debería ser entregada es
 ```javascript
@@ -270,7 +267,8 @@ micallback({
  - [Best Practices for a Pragmatic Restful API](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
  - [json-p.org](http://json-p.org/)
  - [RFC 4627](https://tools.ietf.org/html/rfc4627)
- - [RFC 7159](http://tools.ietf.org/html/rfc7159)
+ - [RFC 7159](https://tools.ietf.org/html/rfc7159)
+ - [RFC 5789](https://tools.ietf.org/html/rfc5789)
  - [ISO 8601](http://www.w3.org/TR/NOTE-datetime)
 
 ##### Unidad de modernización y gobierno digital - Versión 1.0
