@@ -1,7 +1,7 @@
 Guía para la Construcción de APIs
 =================================
 
-##### Estándares de creación de APIS (REST) en el Gobierno de Chile (alpha)
+##### Estándares de creación de Interfaces de programación de aplicaciones (APIs) en el Gobierno de Chile (alpha)
 ##### Unidad de modernización y gobierno digital (www.modernizacion.gob.cl)
 
 ## Indice ##
