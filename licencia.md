@@ -19,11 +19,14 @@ Todos los derechos reservados.
 
 La redistribución y el uso en las formas de código fuente y binario, con o sin
 modificaciones, están permitidos siempre que se cumplan las siguientes condiciones:
+
 1. Las redistribuciones del código fuente deben conservar el aviso de copyright
    anterior, esta lista de condiciones y el siguiente descargo de responsabilidad.
+
 2. Las redistribuciones en formato binario deben reproducir el aviso de copyright
    anterior, esta lista de condiciones y la siguiente renuncia en la documentación
    y/u otros materiales suministrados con la distribución.
+
 3. Ni el nombre de los titulares de derechos de autor ni los nombres de sus
    colaboradores pueden usarse para apoyar o promocionar productos derivados de
    este software sin permiso previo y por escrito.
