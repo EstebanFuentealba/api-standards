@@ -25,7 +25,7 @@ Entregar lineamientos técnicos para la construcción de servicios web (REST) pa
 
 ## Formato de URLs ##
 
-El número de versión de la API debe ir incluida en la base de la URL, asi como también la extensión del formato en el cual serán devueltos los datos.
+El número de versión de la API debe ir incluida en la base de la URL, así como también la extensión del formato en el cual serán devueltos los datos.
 
  - Ej: https://ejemplo.cl/api/v2/solicitudes.json
 
@@ -165,12 +165,12 @@ Los errores deberán ser devueltos utilizando los errores estándares HTTP en el
 | Código HTTP | Descripción |
 | --- | --- |
 | 200 | Ok |
-| 400 | Parametros incorrectos en la entrada |
+| 400 | Parámetros incorrectos en la entrada |
 | 401 | Token de acceso expirado o invalido |
 | 403 | Autenticación OAuth incorrecta |
 | 404 | Recurso no encontrado |
-| 405 | Método HTTP no esperado. Por ej: se esperaba un HTTP GET y se recibió un HTTP POST |
-| 429 | Se están recibiendo muchos requests de parte de tu app. Se esta limitando el acceso |
+| 405 | Método HTTP no esperado. Por ejemplo: se esperaba un HTTP GET y se recibió un HTTP POST |
+| 429 | Se están recibiendo muchos requests de parte de tu applicación. Se esta limitando el acceso |
 | 500 | Error interno del servidor. |
 
 Además, en el contenido de la respuesta se deberá incluir un objeto JSON con los siguientes campos:
