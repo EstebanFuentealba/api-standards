@@ -109,18 +109,18 @@ Los métodos HTTP a usar deben ir en concordancia con lo definido en el estánda
 La siguiente tabla muestra un resumen de los métodos HTTP y su uso:
 
 
-| Método HTTP    | Significado          |
-| -------------- | -------------------- |  
-| GET            | Obtiene un recurso   |  
-| POST           | Crea un recurso      |
-| PUT            | Actualiza un recurso |
-| DELETE         | Borra un recurso     |
+| Método HTTP | Significado |
+| --- | --- |  
+| GET | Obtiene un recurso |  
+| POST | Crea un recurso |
+| PUT | Actualiza un recurso |
+| DELETE | Borra un recurso |
 
 Ejemplos:
 
 
-| Recurso | GET | POST | PUT | DELETE                                 |
-| -| - | - | - | - |
+| Recurso | GET | POST | PUT | DELETE |
+| --- | --- | --- | --- | --- |
 | /mapaches | Obtiene el listado de mapaches | Crea un mapache nuevo | Actualización masiva de mapaches | Borra todos los mapaches |
 | /mapaches/123 | Obtiene el mapache identificado como 123 | Error | Si existe el mapache 123 lo actualiza, si no error | Borra el mapache identificado como 123 |
 
@@ -165,23 +165,23 @@ Los errores deberán ser devueltos utilizando los errores estándares HTTP en el
 
 
 | Código HTTP | Descripción |
-| - | - |
+| --- | --- |
 | 200 | Ok |
 | 400 | Parametros incorrectos en la entrada |
 | 401 | Token de acceso expirado o invalido |
 | 403 | Autenticación OAuth incorrecta |
 | 404 | Recurso no encontrado |
-| 405 | Método HTTP no esperado. Por ej: se esperaba un HTTP GET y se recibió un HTTP POST. |
-| 429 | Se están recibiendo muchos requests de parte de tu app. Se esta limitando el acceso. |
+| 405 | Método HTTP no esperado. Por ej: se esperaba un HTTP GET y se recibió un HTTP POST |
+| 429 | Se están recibiendo muchos requests de parte de tu app. Se esta limitando el acceso |
 | 500 | Error interno del servidor. |
 
 Además, en el contenido de la respuesta se deberá incluir un objeto JSON con los siguientes campos:
 
 | Llave | Valor |
-| - | - |
+| --- | --- |
 | codigo | Código interno de error |
 | mensaje | Descripción del mensaje de error |
-| masInfoURL (Opcional) | URL donde se describe más información sobre el mensaje de error. |
+| masInfoURL (Opcional) | URL donde se describe más información sobre el mensaje de error |
 
 ## Versiones ##
 
@@ -206,9 +206,9 @@ Si no se especifica un límite, entregar los resultados con un límite por defec
 Para especificar límites utilizar parámetros opcionales limit y offset.
 
 | Parámetro | Descripción |
-| - | - |
-| offset | Cuantos registros debe saltarse antes de comenzar. |
-| limit | Cantidad de registros a desplegar. |
+| --- | --- |
+| offset | Cuantos registros debe saltarse antes de comenzar |
+| limit | Cantidad de registros a desplegar |
 
 Ej: Para obtener los registros del 51 al 78:
 
