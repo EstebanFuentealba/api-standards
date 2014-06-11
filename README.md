@@ -108,11 +108,12 @@ La siguiente tabla muestra un resumen de los métodos HTTP y su uso:
 
 
 | Método HTTP | Significado |
-| --- | --- |  
-| GET | Obtiene un recurso |  
+| --- | --- |
+| GET | Obtiene un recurso |
 | POST | Crea un recurso |
 | PUT | Actualiza un recurso |
 | DELETE | Borra un recurso |
+| PATCH | Actualiza parcialmente un recurso |
 
 Ejemplos:
 
