@@ -1,4 +1,4 @@
-Guía para la Construcción de APIs (alpha)
+Guía para la Construcción de APIs (V.1.0)
 =================================
 
 ##### Estándares de creación de interfaces de programación de aplicaciones (APIs) en el Gobierno de Chile
