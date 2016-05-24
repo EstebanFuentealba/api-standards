@@ -225,7 +225,7 @@ Los caracteres especiales pueden ser escapados según lo especificado en el RFC 
 ## JSONP ##
 
 
-JSONP o JSON con padding es una técnica de comunicación utilizada en los programas JavaScript para realizar llamadas asíncronas a dominios diferentes. JSONP es un método concebido para suplir la limitación de AJAX entre dominios, que únicamente permite realizar peticiones a páginas que se encuentran bajo el mismo dominio y puerto por razones de seguridad.
+JSONP o JSON con padding es una técnica de comunicación utilizada en los programas JavaScript para realizar llamadas a dominios diferentes. JSONP es un método concebido para suplir la limitación de AJAX entre dominios, que únicamente permite realizar peticiones a páginas que se encuentran bajo el mismo dominio y puerto por razones de seguridad.
 
 
 Utilizando JSONP se puede permitir el uso de nuestra API desde un navegador web que este visitando una web con un dominio distinto al de nuestra API.
